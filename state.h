@@ -9,10 +9,3 @@ public:
     ~state();
 };
 
-state::state(/* args */)
-{
-}
-
-state::~state()
-{
-}
