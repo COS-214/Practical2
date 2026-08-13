@@ -32,8 +32,8 @@ string BicycleMovement::getType()
 }
 
 
-float BicycleMovement::timeIncrement()
+float BicycleMovement::timeIncrement(float distance)
 {
-    return 4; // 4 minutes per kilometer
+    return distance * 4; // 4 minutes per kilometer
 }
 

@@ -8,14 +8,16 @@
 #include "CarMovement.h"
 #include "FootMovement.h"
 
+class Traveller;
+
 class TrainMovement : public State
 {
 public:
     TrainMovement(/* args */);
     ~TrainMovement();
-    void move(Traveller*, string) override;
-    string getType() override;
-    float timeIncrement() override;
+    void move(Traveller*, string);
+    string getType();
+    float timeIncrement(float distance);
 private:
     string type;
 };

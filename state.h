@@ -3,18 +3,18 @@
 
 #include "Traveller.h"
 
+class Traveller;
+
 
 using namespace std;
 
 class State
 {
-private:
-    /* data */
 public:
-    State(/* args */) {}
+    State() {}
     virtual ~State() {}
     virtual void move(Traveller*, string) = 0;
     virtual string getType() = 0;
-    virtual float timeIncrement() = 0;
+    virtual float timeIncrement(float distance) = 0;
 };
 

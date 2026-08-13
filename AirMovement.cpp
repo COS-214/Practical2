@@ -11,9 +11,17 @@ AirMovement::AirMovement()
 AirMovement::~AirMovement() {}
 
 void AirMovement::move(Traveller* con, string newMovement) {
-    if (newMovement.compare("AirMovement")) {
+    if (newMovement == ("AirMovement")) {
         con->setState(new AirMovement());
-    }
+    } else if (newMovement == ("BicycleMovement")) {
+        con->setState(new BicycleMovement());
+    } else if (newMovement == ("FootMovement")) {
+        con->setState(new FootMovement());
+    } else if (newMovement == ("CarMovement")) {
+        con->setState(new CarMovement());
+    } else if (newMovement == ("TrainMovement")) {
+        con->setState(new TrainMovement());
+    } 
 }
 
 string AirMovement::getType()
@@ -21,7 +29,7 @@ string AirMovement::getType()
     return type;
 }
 
-float AirMovement::timeIncrement()
+float AirMovement::timeIncrement(float distance)
 {
-    return 0.42; // 0.42 minutes per kilometer
+    return distance * 0.42; // 0.42 minutes per kilometer
 }

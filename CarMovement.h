@@ -8,6 +8,7 @@
 #include "FootMovement.h"
 #include "TrainMovement.h"
 
+class Traveller;
 
 class CarMovement : public State {
 public:
@@ -15,7 +16,7 @@ public:
     ~CarMovement();
     void move(Traveller*, string) override;
     string getType() override;
-    float timeIncrement() override;
+    float timeIncrement(float distance) override;
 private:
     string type;
 };
