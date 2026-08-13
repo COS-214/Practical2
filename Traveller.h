@@ -1,18 +1,15 @@
 #pragma once
 
+#include "State.h"
+#include "Traveller.h"
+
 class Traveller
 {
-private:
-    /* data */
 public:
     Traveller(/* args */);
     ~Traveller();
+    void setState(State* state);
+private:
+    State* state;
 };
 
-Traveller::Traveller(/* args */)
-{
-}
-
-Traveller::~Traveller()
-{
-}

@@ -1,18 +1,22 @@
 #pragma once
 
-class BicycleMovement
+#include "State.h"
+#include "Traveller.h"
+
+#include "AirMovement.h"
+#include "BicycleMovement.h"
+#include "CarMovement.h"
+#include "FootMovement.h"
+#include "TrainMovement.h"
+
+class BicycleMovement : public State
 {
-private:
-    /* data */
 public:
     BicycleMovement(/* args */);
     ~BicycleMovement();
+    void move(Traveller*, string) override;
+    string getType() override;
+    float timeIncrement() override;
+private:
+    string type;
 };
-
-BicycleMovement::BicycleMovement(/* args */)
-{
-}
-
-BicycleMovement::~BicycleMovement()
-{
-}
