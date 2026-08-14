@@ -9,13 +9,13 @@
 // #include "FootMovement.h"
 // #include "TrainMovement.h"
 
-#include "Route.h"
-#include "RouteStrategy.h"
-#include "ScenicRoute.h"
-#include "ShortestRoute.h"
-#include "BestRoute.h"
-#include "CheaperRoute.h"
-#include "FastestRoute.h"
+// #include "Route.h"
+// #include "RouteStrategy.h"
+// #include "ScenicRoute.h"
+// #include "ShortestRoute.h"
+// #include "BestRoute.h"
+// #include "CheaperRoute.h"
+// #include "FastestRoute.h"
 
 int main(void) {
     // Testing the states pattern
@@ -67,26 +67,30 @@ int main(void) {
     // delete traveller;
 
     // testing the strategy pattern
-    Route* route = new Route();
-    route->setStrategy(new BestRoute()); // Strategy change
-    route->getRoute()->useRoute();
-    std::cout << "\n";
+    // Route* route = new Route();
+    // route->setStrategy(new BestRoute()); // Strategy change
+    // route->getRoute()->useRoute();
+    // std::cout << "\n";
 
-    route->setStrategy(new CheaperRoute()); // Strategy change
-    route->getRoute()->useRoute();
-    std::cout << "\n";
+    // route->setStrategy(new CheaperRoute()); // Strategy change
+    // route->getRoute()->useRoute();
+    // std::cout << "\n";
 
-    route->setStrategy(new FastestRoute()); // Strategy change
-    route->getRoute()->useRoute();
-    std::cout << "\n";
+    // route->setStrategy(new FastestRoute()); // Strategy change
+    // route->getRoute()->useRoute();
+    // std::cout << "\n";
 
-    route->setStrategy(new ScenicRoute()); // Strategy change
-    route->getRoute()->useRoute();
-    std::cout << "\n";
+    // route->setStrategy(new ScenicRoute()); // Strategy change
+    // route->getRoute()->useRoute();
+    // std::cout << "\n";
 
-    route->setStrategy(new ShortestRoute()); // Strategy change
-    route->getRoute()->useRoute();
-    std::cout << "\n";
+    // route->setStrategy(new ShortestRoute()); // Strategy change
+    // route->getRoute()->useRoute();
+    // std::cout << "\n";
 
-    delete route;
+    // delete route;
+
+    
+
+    return 0;
 }
