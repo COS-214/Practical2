@@ -1,15 +1,15 @@
 #include <iostream>
 
-#include "ForestStructure.h"
+#include "CityStructure.h"
 
-ForestStructure::ForestStructure()
+CityStructure::CityStructure()
 {}
 
-ForestStructure::~ForestStructure()
+CityStructure::~CityStructure()
 {}
 
 
-void ForestStructure::observe()
+void CityStructure::observe()
 {
     std::cout << "This is some amaizing architecture\n";
 }
