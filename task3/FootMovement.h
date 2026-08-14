@@ -13,7 +13,7 @@ class Traveller;
 class FootMovement : public State
 {
 public:
-    FootMovement(/* add */);
+    FootMovement();
     ~FootMovement();
     void move(Traveller*, string) override;
     string getType() override;

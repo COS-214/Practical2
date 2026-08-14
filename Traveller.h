@@ -9,7 +9,7 @@ class State;
 class Traveller
 {
 public:
-    Traveller(/* args */);
+    Traveller();
     ~Traveller();
     void change(std::string);
     void setState(State* state);
