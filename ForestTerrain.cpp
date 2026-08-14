@@ -11,5 +11,5 @@ ForestTerrain::~ForestTerrain()
 
 void ForestTerrain::observe()
 {
-    std::cout << "What species is that!!!!?.............. Oh, its just Senzo\n";
+    std::cout << "Which type of animal is that?!!!.............. Oh, its just Senzo\n";
 }
