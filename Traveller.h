@@ -14,7 +14,7 @@ public:
     void change(std::string);
     void setState(State* state);
     float getDistance();
-    void getDistance(float dist);
+    void setDistance(float dist);
     float getTotalTimeTravelled();
     State* getState();
     void incrementTravelTime();

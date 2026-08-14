@@ -4,14 +4,6 @@
 #include "State.h"
 #include "Traveller.h"
 
-<<<<<<< HEAD
-Traveller::Traveller() {}
-
-Traveller::~Traveller() {
-    state = nullptr;
-}
-
-=======
 Traveller::Traveller() {
     state = nullptr;
     distance = 0;
@@ -23,7 +15,6 @@ Traveller::~Traveller() {
     state = nullptr;
 }
 
->>>>>>> f7290e8 (complete)
 void Traveller::change(string newState)
 {
     state->move(this,  newState);
@@ -44,9 +35,9 @@ float Traveller::getDistance()
     return distance;
 }
 
-void Traveller::getDistance(float dist)
+void Traveller::setDistance(float dist)
 {
-    distance = dist;
+    this->distance = dist;
 }
 
 float Traveller::getTotalTimeTravelled()

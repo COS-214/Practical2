@@ -22,10 +22,36 @@ int main(void) {
 
     while (true){
         traveller1->incrementDistance();
-
-        if (number == traveller1->getDistance() || traveller1->getState()->timeIncrement(traveller1->getDistance()) > 20) {
+        if (number == traveller1->getDistance()) {
             traveller1->change("BicycleMovement"); 
-            traveller1->setState(0);
+            traveller1->setDistance(0);
+            break;             
+        }
+    }
+
+    while (true){
+        traveller1->incrementDistance();
+        if (traveller1->getState()->timeIncrement(traveller1->getDistance()) > 20) {
+            traveller1->change("CarMovement"); 
+            traveller1->setDistance(0);
+            break;             
+        }
+    }
+
+    while (true){
+        traveller1->incrementDistance();
+        if (traveller1->getState()->timeIncrement(traveller1->getDistance()) > 50) {
+            traveller1->change("FootMovement"); 
+            traveller1->setDistance(0);
+            break;             
+        }
+    }
+
+    while (true){
+        traveller1->incrementDistance();
+        if (traveller1->getState()->timeIncrement(traveller1->getDistance()) > 10) {
+            traveller1->change("TrainMovement"); 
+            traveller1->setDistance(0);
             break;             
         }
     }
