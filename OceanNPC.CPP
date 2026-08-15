@@ -3,7 +3,8 @@
 #include "OceanNPC.h"
 
 OceanNPC::OceanNPC()
-{}
+{
+}
 
 OceanNPC::~OceanNPC()
 {}

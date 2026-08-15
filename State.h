@@ -1,10 +1,7 @@
 #pragma once
 #include <string>
 
-#include "Traveller.h"
-
 class Traveller;
-
 
 using namespace std;
 

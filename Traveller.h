@@ -1,10 +1,7 @@
 #pragma once
-#include <string>
 
 #include "State.h"
-#include "Traveller.h"
-
-class State;
+#include <string>
 
 class Traveller
 {

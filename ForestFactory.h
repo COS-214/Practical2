@@ -1,17 +1,18 @@
+#pragma once
 #include <iostream>
 
 #include "WorldBuilder.h"
-#include "DesertNPC.h"
-#include "DesertStructure.h"
-#include "DesertObstacle.h"
-#include "DesertTerrain.h"
+#include "ForestNPC.h"
+#include "ForestStructure.h"
+#include "ForestObstacle.h"
+#include "ForestTerrain.h"
 
 
-class DesertFactory : public WorldBuilder
+class ForestFactory : public WorldBuilder
 {
 public:
-    DesertFactory();
-    ~DesertFactory();
+    ForestFactory();
+    ~ForestFactory();
     NPC* createNPC() override;
     Obstacle* createObstacle() override;
     Terrain* createTerrain() override;

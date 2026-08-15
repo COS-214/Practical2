@@ -4,20 +4,20 @@
 #include "Traveller.h"
 
 #include "BicycleMovement.h"
-#include "AirMovement.h"
 #include "CarMovement.h"
+#include "FootMovement.h"
 #include "TrainMovement.h"
-
 class Traveller;
 
-class FootMovement : public State
+class AirMovement : public State
 {
 public:
-    FootMovement();
-    ~FootMovement();
+    AirMovement();
+    ~AirMovement();
     void move(Traveller*, string) override;
     string getType() override;
     float timeIncrement(float distance) override;
 private:
     string type;
 };
+

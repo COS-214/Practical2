@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 #include "Traveller.h"
 #include "FootMovement.h"
 
@@ -12,15 +11,15 @@ FootMovement::FootMovement()
 FootMovement::~FootMovement() {}
 
 void FootMovement::move(Traveller* con, string newMovement) {
-    if (newMovement.compare("AirMovement")) {
+    if (newMovement == ("AirMovement")) {
         con->setState(new AirMovement());
-    } else if (newMovement.compare("BicycleMovement")) {
+    } else if (newMovement == ("BicycleMovement")) {
         con->setState(new BicycleMovement());
-    } else if (newMovement.compare("FootMovement")) {
+    } else if (newMovement == ("FootMovement")) {
         con->setState(new FootMovement());
-    } else if (newMovement.compare("CarMovement")) {
+    } else if (newMovement == ("CarMovement")) {
         con->setState(new CarMovement());
-    } else if (newMovement.compare("TrainMovement")) {
+    } else if (newMovement == ("TrainMovement")) {
         con->setState(new TrainMovement());
     } 
 }

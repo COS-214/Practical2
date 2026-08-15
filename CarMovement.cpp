@@ -1,16 +1,15 @@
 #include <iostream>
 
-#include "Traveller.h"
-#include "AirMovement.h"
+#include "CarMovement.h"
 
-AirMovement::AirMovement()
+CarMovement::CarMovement()
 {
-    type = "Air";
+    type = "Car";
 }
 
-AirMovement::~AirMovement() {}
+CarMovement::~CarMovement() {}
 
-void AirMovement::move(Traveller* con, string newMovement) {
+void CarMovement::move(Traveller* con, string newMovement) {
     if (newMovement == ("AirMovement")) {
         con->setState(new AirMovement());
     } else if (newMovement == ("BicycleMovement")) {
@@ -24,12 +23,12 @@ void AirMovement::move(Traveller* con, string newMovement) {
     } 
 }
 
-string AirMovement::getType()
+string CarMovement::getType()
 {
     return type;
 }
 
-float AirMovement::timeIncrement(float distance)
+float CarMovement::timeIncrement(float distance)
 {
-    return distance * 0.42; // 0.42 minutes per kilometer
+    return distance * 1.3; // 1.3 minutes per kilometer
 }

@@ -1,17 +1,62 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra
+CXXFLAGS = -std=c++11 -Wall
 
-TARGET = program
-SOURCES = $(wildcard *.cpp)
-OBJECTS = $(SOURCES:.cpp=.o)
+SOURCES = main.cpp \
+          AirMovement.cpp \
+          BestRoute.cpp \
+          BicycleMovement.cpp \
+          CarMovement.cpp \
+          CheaperRoute.cpp \
+          CityFactory.cpp \
+          CityNPC.cpp \
+          CityObstacle.cpp \
+          CityStructure.cpp \
+          CityTerrain.cpp \
+          DesertFactory.cpp \
+          DesertNPC.cpp \
+          DesertObstacle.cpp \
+          DesertStructure.cpp \
+          DesertTerrain.cpp \
+          FastestRoute.cpp \
+          FootMovement.cpp \
+          ForestFactory.cpp \
+          ForestNPC.cpp \
+          ForestObstacle.cpp \
+          ForestStructure.cpp \
+          ForestTerrain.cpp \
+          Location.cpp \
+          Locations.cpp \
+          LocationSpecifications.cpp \
+          Map.cpp \
+          NPC.cpp \
+          Obstacle.cpp \
+		  OceanNPC.cpp \
+          OceanFactory.cpp \
+          OceanObstacle.cpp \
+          OceanStructure.cpp \
+          OceanTerrain.cpp \
+          Quest.cpp \
+          Region.cpp \
+          Route.cpp \
+          RouteStrategy.cpp \
+          ScenicRoute.cpp \
+          ShortestRoute.cpp \
+          Structure.cpp \
+          Terrain.cpp \
+          Toll.cpp \
+          TrainMovement.cpp \
+          Traveller.cpp \
+          Weather.cpp \
+          WorldBuilder.cpp
 
-$(TARGET): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(TARGET)
+TARGET =  wayfarer
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+all: $(TARGET)
+
+$(TARGET): $(SOURCES)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SOURCES)
 
 clean:
-	rm -f $(OBJECTS) $(TARGET)
+	rm -f $(TARGET)
 
-.PHONY: clean
+.PHONY: all clean

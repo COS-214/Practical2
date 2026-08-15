@@ -1,141 +1,174 @@
 #include <iostream>
 #include <string>
-#include <random>
 
-// #include "State.h"
-// #include "Traveller.h"
-// #include "BicycleMovement.h"
-// #include "CarMovement.h"
-// #include "FootMovement.h"
-// #include "TrainMovement.h"
+#include "State.h"
+#include "Traveller.h"
+#include "AirMovement.h"
+#include "BicycleMovement.h"
+#include "CarMovement.h"
+#include "FootMovement.h"
+#include "TrainMovement.h"
 
-// #include "Route.h"
-// #include "RouteStrategy.h"
-// #include "ScenicRoute.h"
-// #include "ShortestRoute.h"
-// #include "BestRoute.h"
-// #include "CheaperRoute.h"
-// #include "FastestRoute.h"
+#include "Route.h"
+#include "BestRoute.h"
+#include "CheaperRoute.h"
+#include "FastestRoute.h"
+#include "ScenicRoute.h"
+#include "ShortestRoute.h"
 
-// #include "all.h"
+#include "WorldBuilder.h"
+#include "CityFactory.h"
+#include "ForestFactory.h"
+#include "DesertFactory.h"
+#include "OceanFactory.h"
+#include "NPC.h"
 
 #include "Map.h"
 #include "Location.h"
-#include "Locations.h"
-#include "LocationSpecifications.h"
-#include "Region.h"
 #include "Quest.h"
-#include "Weather.h"
 #include "Toll.h"
+#include "Weather.h"
 
-int main(void) {
-    // ================== states pattern =======================================================================
-    // std::random_device rd;
-    // std::mt19937 gen(rd());
-    // std::uniform_int_distribution<int> dist(1, 100);
-
-    // int number = dist(gen);
-
-    // Traveller* traveller = new Traveller();
-    // State* state = new AirMovement();
-    // traveller->setState(state);
-
-    // while (true){
-    //     traveller->incrementDistance();
-    //     if (number == traveller->getDistance()) {
-    //         traveller->change("BicycleMovement"); 
-    //         traveller->setDistance(0);
-    //         break;             
-    //     }
-    // }
-
-    // while (true){
-    //     traveller->incrementDistance();
-    //     if (traveller->getState()->timeIncrement(traveller->getDistance()) > 20) {
-    //         traveller->change("CarMovement"); 
-    //         traveller->setDistance(0);
-    //         break;             
-    //     }
-    // }
-
-    // while (true){
-    //     traveller->incrementDistance();
-    //     if (traveller->getState()->timeIncrement(traveller->getDistance()) > 50) {
-    //         traveller->change("FootMovement"); 
-    //         traveller->setDistance(0);
-    //         break;             
-    //     }
-    // }
-
-    // while (true){
-    //     traveller->incrementDistance();
-    //     if (traveller->getState()->timeIncrement(traveller->getDistance()) > 10) {
-    //         traveller->change("TrainMovement"); 
-    //         traveller->setDistance(0);
-    //         break;             
-    //     }
-    // } 
-    // delete traveller;
-
-    // ======================== strategy pattern ============================================================================
-    // Route* route = new Route();
-    // route->setStrategy(new BestRoute()); // Strategy change
-    // route->getRoute()->useRoute();
-    // std::cout << "\n";
-
-    // route->setStrategy(new CheaperRoute()); // Strategy change
-    // route->getRoute()->useRoute();
-    // std::cout << "\n";
-
-    // route->setStrategy(new FastestRoute()); // Strategy change
-    // route->getRoute()->useRoute();
-    // std::cout << "\n";
-
-    // route->setStrategy(new ScenicRoute()); // Strategy change
-    // route->getRoute()->useRoute();
-    // std::cout << "\n";
-
-    // route->setStrategy(new ShortestRoute()); // Strategy change
-    // route->getRoute()->useRoute();
-    // std::cout << "\n";
-
-    // delete route;
+#include "Region.h"
 
 
-    // Abstract factory
-    // WorldBuilder* factory1 = new CityFactory();
-    // WorldBuilder* factory2 = new ForestFactory();
-    // WorldBuilder* factory3 = new DesertFactory();
-    // WorldBuilder* factory4 = new OceanFactory();
+int main()
+{
+    std::cout << "================ STATE PATTERN ================\n";
+    int number = 60;
 
-    // delete factory1;
-    // delete factory2;
-    // delete factory3;
-    // delete factory4;
+    Traveller* traveller = new Traveller();
+    State* state = new AirMovement();
+    traveller->setState(state);
 
-    // ============================== Composite ====================================================================================
+    std::cout << "Current state: " << traveller->getState()->getType() << "\n";
 
-    // ============================== Decorator ====================================================================================
+    while (true){
+        traveller->incrementDistance();
+        if (number == traveller->getDistance()) {
+            traveller->change("BicycleMovement"); 
+            traveller->setDistance(0);
+            break;             
+        }
+    }
+    std::cout << "Current state: " << traveller->getState()->getType() << "\n";
+
+    while (true){
+        traveller->incrementDistance();
+        if (traveller->getState()->timeIncrement(traveller->getDistance()) > 20) {
+            traveller->change("CarMovement"); 
+            traveller->setDistance(0);
+            break;             
+        }
+    }
+    std::cout << "Current state: " << traveller->getState()->getType() << "\n";
+
+    while (true){
+        traveller->incrementDistance();
+        if (traveller->getState()->timeIncrement(traveller->getDistance()) > 50) {
+            traveller->change("FootMovement"); 
+            traveller->setDistance(0);
+            break;             
+        }
+    }
+    std::cout << "Current state: " << traveller->getState()->getType() << "\n";
+
+    while (true){
+        traveller->incrementDistance();
+        if (traveller->getState()->timeIncrement(traveller->getDistance()) > 10) {
+            traveller->change("TrainMovement"); 
+            traveller->setDistance(0);
+            break;             
+        }
+    } 
+    std::cout << "Current state: " << traveller->getState()->getType() << "\n";
+    delete traveller;
+
+    std::cout << "\n================ STRATEGY PATTERN ================\n";
+
+    Route* route = new Route();
+
+    route->setStrategy(new BestRoute());
+    route->getRoute()->useRoute();
+
+    route->setStrategy(new CheaperRoute());
+    route->getRoute()->useRoute();
+
+    route->setStrategy(new FastestRoute());
+    route->getRoute()->useRoute();
+
+    route->setStrategy(new ScenicRoute());
+    route->getRoute()->useRoute();
+
+    route->setStrategy(new ShortestRoute());
+    route->getRoute()->useRoute();
+
+    delete route;
+
+
+    std::cout << "\n================ ABSTRACT FACTORY ================\n";
+
+    WorldBuilder* cityFactory = new CityFactory();
+    WorldBuilder* forestFactory = new ForestFactory();
+    WorldBuilder* desertFactory = new DesertFactory();
+    WorldBuilder* oceanFactory = new OceanFactory();
+
+    NPC* cityNPC = cityFactory->createNPC();
+    NPC* forestNPC = forestFactory->createNPC();
+    NPC* desertNPC = desertFactory->createNPC();
+    NPC* oceanNPC = oceanFactory->createNPC();
+
+    cityNPC->observe();
+    forestNPC->observe();
+    desertNPC->observe();
+    oceanNPC->observe();
+
+    delete cityNPC;
+    delete forestNPC;
+    delete desertNPC;
+    delete oceanNPC;
+
+    delete cityFactory;
+    delete forestFactory;
+    delete desertFactory;
+    delete oceanFactory;
+
+
+    std::cout << "\n================ DECORATOR PATTERN ================\n";
+
+    // Base component
     Map* location1 = new Location();
-    Map* QuestLocation = new Quest(location1);
-    Map* TollQuestLocation = new Toll(QuestLocation);
-    Map* WeatherTollQuestLocation = new Toll(TollQuestLocation);
 
+    // Decorate it progressively
+    Map* questLocation = new Quest(location1);
+    Map* tollQuestLocation = new Toll(questLocation);
+    Map* weatherTollQuestLocation = new Weather(tollQuestLocation);
+
+
+    // Another valid combination
     Map* location2 = new Location();
-    Map* TollLocation2 = new Toll(location2);
-    Map* WeatherTollLocation = new Toll(TollLocation2);
+
+    Map* tollLocation = new Toll(location2);
+    Map* weatherTollLocation = new Weather(tollLocation);
 
 
+    // Another valid combination
     Map* location3 = new Location();
-    Map* QuestLocation3 = new Quest(location3);
-    Map* TollQuestLocation3 = new Toll(QuestLocation3);
 
-    Region* locations = new Region();
-    locations->add(WeatherTollQuestLocation);
-    locations->add(WeatherTollLocation);
-    locations->add(TollQuestLocation3);
+    Map* questLocation3 = new Quest(location3);
+    Map* tollQuestLocation3 = new Toll(questLocation3);
 
-    delete locations;
+
+    std::cout << "\n================ COMPOSITE PATTERN ================\n";
+
+    Region* region = new Region();
+    region->add(weatherTollQuestLocation);
+    region->add(weatherTollLocation);
+    region->add(tollQuestLocation3);
+    region->print();
+
+    delete region;
+
 
     return 0;
 }

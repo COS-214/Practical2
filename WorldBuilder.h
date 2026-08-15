@@ -1,4 +1,6 @@
+#pragma once
 #include <iostream>
+
 
 #include "NPC.h"
 #include "Obstacle.h"
@@ -10,7 +12,7 @@ class WorldBuilder
 
 public:
     WorldBuilder();
-    ~WorldBuilder();
+    virtual ~WorldBuilder();
     virtual NPC* createNPC() = 0;
     virtual Obstacle* createObstacle() = 0;
     virtual Terrain* createTerrain() = 0;

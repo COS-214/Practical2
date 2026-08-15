@@ -20,10 +20,21 @@ void Region::add(Map *child)
 
 Map* Region::getMap(int i)
 {
-    if (i > maps.max_size()) { return nullptr; }
+    if (i >= static_cast<int>(maps.size())) { return nullptr; }
     return maps.at(i);
 }
 
 void Region::print()
 {
+    std::cout << "========== Region ==========\n";
+
+    for (auto it = maps.begin(); it != maps.end(); ++it)
+    {
+        if (*it != nullptr)
+        {
+            (*it)->print();
+        }
+    }
+
+    std::cout << "======== End Region =========\n";
 }
