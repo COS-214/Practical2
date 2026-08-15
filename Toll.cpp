@@ -2,24 +2,14 @@
 
 #include "Toll.h"
 
-Toll::Toll()
-{
+Toll::Toll(Map* location)
+    : LocationSpecifications(location) {
+    this->name = "Toll";
 }
 
-Toll::Toll(Map* location, std::string name)
-{
-    this->name = name;
-}
-
-Toll::~Toll()
-{
-}
+Toll::~Toll() {}
 
 void Toll::print()
 {
-}
-
-std::string Toll::getName()
-{
-    return std::string();
+    std::cout << "============= " << this->name << " ==================\N";
 }

@@ -17,17 +17,6 @@ void Region::add(Map *child)
     maps.push_back(child);
 }
 
-void Region::remove(std::string name)
-{
-    for (auto it = maps.begin(); it != maps.end(); ) {
-        if ((*it)->getName() == name) {
-            it = maps.erase(it); 
-        } else {
-            ++it; 
-        }
-    }
-}
-
 Map* Region::getMap(int i)
 {
     if (i > maps.max_size()) { return nullptr; }
@@ -36,10 +25,4 @@ Map* Region::getMap(int i)
 
 void Region::print()
 {
-    std::cout << "======== " << name << " =========\n";
-}
-
-std::string Region::getName()
-{
-    return name;
 }

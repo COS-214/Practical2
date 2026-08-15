@@ -116,8 +116,26 @@ int main(void) {
     // ============================== Composite ====================================================================================
 
     // ============================== Decorator ====================================================================================
-    Map* location = new Location("Location");
-    Map* QuestLocation = new Quest("QuestLocation");
-    Map* TollQuestLocation = new Toll()
+    Map* location1 = new Location();
+    Map* QuestLocation = new Quest(location1);
+    Map* TollQuestLocation = new Toll(QuestLocation);
+    Map* WeatherTollQuestLocation = new Toll(TollQuestLocation);
+
+    Map* location2 = new Location();
+    Map* TollLocation2 = new Toll(location2);
+    Map* WeatherTollLocation = new Toll(TollLocation2);
+
+
+    Map* location3 = new Location();
+    Map* QuestLocation3 = new Quest(location3);
+    Map* TollQuestLocation3 = new Toll(QuestLocation3);
+
+    Region* locations = new Region();
+    locations->add(WeatherTollQuestLocation);
+    locations->add(WeatherTollLocation);
+    locations->add(TollQuestLocation3);
+
+    delete locations;
+
     return 0;
 }

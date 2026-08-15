@@ -3,11 +3,10 @@
 #include "LocationSpecifications.h"
 
 
-LocationSpecifications::LocationSpecifications() {}
+LocationSpecifications::LocationSpecifications(Map* location) {
+    this->location = location;
+}
 
-LocationSpecifications::~LocationSpecifications() {}
-
-void LocationSpecifications::add(Map *location)
-{
-    this->location = new location;
+LocationSpecifications::~LocationSpecifications() {
+    delete location;
 }

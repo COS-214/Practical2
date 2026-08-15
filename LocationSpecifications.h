@@ -5,11 +5,9 @@
 class LocationSpecifications : public Locations
 {
 public:
-    LocationSpecifications();
+    LocationSpecifications(Map* location);
     virtual ~LocationSpecifications();
-    void add(Map* location);
     virtual void print() = 0;
-    virtual std::string getName() = 0;
 private:
-    Locations* location;
+    Map* location;
 };

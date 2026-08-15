@@ -1,21 +1,12 @@
 #include <iostream>
 
 #include "Location.h"
-Location::Location() {}
 
-Location::Location(std::string name)
-{
-    this->name = name;
-}
+Location::Location() {}
 
 Location::~Location() {}
 
 void Location::print()
 {
-    std::cout << "======== " << name << " =========\n";
-}
-
-std::string Location::getName()
-{
-    return name;
+    std::cout << "======== " << "Location" << " =========\n";
 }

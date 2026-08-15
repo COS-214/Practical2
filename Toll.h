@@ -5,11 +5,9 @@
 class Toll : public LocationSpecifications
 {
 public: 
-    Toll();
-    Toll(Map* location, std::string);
+    Toll(Map* location);
     ~Toll();
     void print()override ;
-    std::string getName()override ;
 private:
     std::string name;
 };
