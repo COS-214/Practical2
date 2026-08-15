@@ -6,8 +6,9 @@ Region::Region() {}
 
 Region::~Region()
 {
-  for (auto it = maps.begin(); it != maps.end(); ++it)
+  for (auto it = maps.begin(); it != maps.end(); ++it){
     delete *it;
+  }
 }
 
 void Region::add(Map *child)
