@@ -7,16 +7,8 @@ class Quest : public LocationSpecifications
 public: 
     Quest();
     ~Quest();
-    override void print();
-    override string getName();
+    void print() override ;
+    std::string getName() override ;
 private:
-    string name;
+    std::string name;
 };
-
-Quest::Quest()
-{
-}
-
-Quest::~Quest()
-{
-}

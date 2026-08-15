@@ -7,16 +7,8 @@ class Weather : public LocationSpecifications
 public: 
     Weather();
     ~Weather();
-    override void print();
-    override string getName();
+    void print() override;
+    std::string getName()override ;
 private:
-    string name;
+    std::string name;
 };
-
-Weather::Weather()
-{
-}
-
-Weather::~Weather()
-{
-}
