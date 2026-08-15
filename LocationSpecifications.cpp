@@ -6,3 +6,8 @@
 LocationSpecifications::LocationSpecifications() {}
 
 LocationSpecifications::~LocationSpecifications() {}
+
+void LocationSpecifications::add(Map *location)
+{
+    this->location = new location;
+}

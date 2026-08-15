@@ -1,6 +1,8 @@
 #include <iostream>
 
-class Locations
+#include "Map.h"
+
+class Locations : public Map
 {
 public:
     Locations();

@@ -19,6 +19,15 @@
 
 #include "all.h"
 
+#include "Map.h"
+#include "Location.h"
+#include "Locations.h"
+#include "LocationSpecifications.h"
+#include "Region.h"
+#include "Quest.h"
+#include "Weather.h"
+#include "Toll.h"
+
 int main(void) {
     // ================== states pattern =======================================================================
     // std::random_device rd;
@@ -106,5 +115,9 @@ int main(void) {
 
     // ============================== Composite ====================================================================================
 
+    // ============================== Decorator ====================================================================================
+    Map* location = new Location("Location");
+    Map* QuestLocation = new Quest("QuestLocation");
+    Map* TollQuestLocation = new Toll()
     return 0;
 }

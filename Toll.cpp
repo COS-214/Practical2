@@ -6,6 +6,11 @@ Toll::Toll()
 {
 }
 
+Toll::Toll(Map* location, std::string name)
+{
+    this->name = name;
+}
+
 Toll::~Toll()
 {
 }

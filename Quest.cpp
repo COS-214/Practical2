@@ -2,8 +2,11 @@
 
 #include "Quest.h" 
 
-Quest::Quest()
+Quest::Quest() {}
+
+Quest::Quest(Map* location,std::string name)
 {
+    this->name = name;
 }
 
 Quest::~Quest()

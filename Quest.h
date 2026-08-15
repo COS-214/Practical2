@@ -6,6 +6,7 @@ class Quest : public LocationSpecifications
 {
 public: 
     Quest();
+    Quest(Map*, std::string);
     ~Quest();
     void print() override ;
     std::string getName() override ;

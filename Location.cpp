@@ -3,6 +3,11 @@
 #include "Location.h"
 Location::Location() {}
 
+Location::Location(std::string name)
+{
+    this->name = name;
+}
+
 Location::~Location() {}
 
 void Location::print()
