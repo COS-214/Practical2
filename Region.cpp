@@ -39,4 +39,10 @@ Map* Region::getMap(int i)
 
 void Region::print()
 {
+    std::cout << "======== " << name << " =========\n";
+}
+
+std::string Region::getName()
+{
+    return name;
 }

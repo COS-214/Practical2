@@ -12,8 +12,10 @@ public:
     void remove(std::string);
     Map* getMap(int);
     void print() override;
+    std::string getName() override;
 private:
     std::vector<Map*> maps;
+    std::string name;
 };
 
 

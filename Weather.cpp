@@ -2,13 +2,9 @@
 
 #include "Weather.h" 
 
-Weather::Weather()
-{
-}
+Weather::Weather() {}
 
-Weather::~Weather()
-{
-}
+Weather::~Weather() {}
 
 void Weather::print()
 {
