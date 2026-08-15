@@ -17,8 +17,10 @@
 // #include "CheaperRoute.h"
 // #include "FastestRoute.h"
 
+#include "all.h"
+
 int main(void) {
-    // Testing the states pattern
+    // ================== states pattern =======================================================================
     // std::random_device rd;
     // std::mt19937 gen(rd());
     // std::uniform_int_distribution<int> dist(1, 100);
@@ -66,7 +68,7 @@ int main(void) {
     // } 
     // delete traveller;
 
-    // testing the strategy pattern
+    // ======================== strategy pattern ============================================================================
     // Route* route = new Route();
     // route->setStrategy(new BestRoute()); // Strategy change
     // route->getRoute()->useRoute();
@@ -90,7 +92,19 @@ int main(void) {
 
     // delete route;
 
-    
+
+    // Abstract factory
+    // WorldBuilder* factory1 = new CityFactory();
+    // WorldBuilder* factory2 = new ForestFactory();
+    // WorldBuilder* factory3 = new DesertFactory();
+    // WorldBuilder* factory4 = new OceanFactory();
+
+    // delete factory1;
+    // delete factory2;
+    // delete factory3;
+    // delete factory4;
+
+    // ============================== Composite ====================================================================================
 
     return 0;
 }
