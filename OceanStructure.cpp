@@ -11,5 +11,5 @@ OceanStructure::~OceanStructure()
 
 void OceanStructure::observe()
 {
-    std::cout << "What type of sharks are here?\n";
+    std::cout << "\n++ What type of sharks are here?\n\n";
 }

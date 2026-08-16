@@ -11,5 +11,5 @@ OceanObstacle::~OceanObstacle()
 
 void OceanObstacle::observe()
 {
-    std::cout << "Three days and three nights to go!!\n";
+    std::cout << "\n++ Three days and three nights to go!!\n\n";
 }

@@ -9,6 +9,6 @@ public:
     LocationSpecifications(Map* location);
     virtual ~LocationSpecifications();
     virtual void print() = 0;
-private:
+protected:
     Map* location;
 };

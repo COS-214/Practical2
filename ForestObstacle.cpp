@@ -11,5 +11,5 @@ ForestObstacle::~ForestObstacle()
 
 void ForestObstacle::observe()
 {
-    std::cout << "I just got slapped by a monkey.\n";
+    std::cout << "\n-- I just got slapped by a monkey.\n\n";
 }

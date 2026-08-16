@@ -12,5 +12,5 @@ OceanNPC::~OceanNPC()
 
 void OceanNPC::observe()
 {
-    std::cout << "Boooooooop.... Booooooop!!\n";
+    std::cout << "\n++ Boooooooop.... Booooooop!!\n\n";
 }

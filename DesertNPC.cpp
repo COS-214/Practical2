@@ -11,5 +11,5 @@ DesertNPC::~DesertNPC()
 
 void DesertNPC::observe()
 {
-    std::cout << "Do you have water!!\n";
+    std::cout << "\n## Do you have water!!\n\n";
 }

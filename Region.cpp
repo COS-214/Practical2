@@ -20,8 +20,19 @@ void Region::add(Map *child)
 
 Map* Region::getMap(int i)
 {
-    if (i >= static_cast<int>(maps.size())) { return nullptr; }
+    if (i >= static_cast<int>(maps.size()) || i < 0) { return nullptr; }
     return maps.at(i);
+}
+
+void Region::setMap(int index, Map* newChild)
+{
+    if (index < 0 || index >= static_cast<int>(maps.size()) || newChild == nullptr) { return; }
+    maps.at(index) = newChild; 
+}
+
+int Region::size()
+{
+    return static_cast<int>(maps.size());
 }
 
 void Region::print()

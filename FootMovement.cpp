@@ -11,17 +11,19 @@ FootMovement::FootMovement()
 FootMovement::~FootMovement() {}
 
 void FootMovement::move(Traveller* con, string newMovement) {
-    if (newMovement == ("AirMovement")) {
-        con->setState(new AirMovement());
-    } else if (newMovement == ("BicycleMovement")) {
+    if (con == nullptr) return;
+
+    if (newMovement == "BicycleMovement") {
         con->setState(new BicycleMovement());
-    } else if (newMovement == ("FootMovement")) {
+    } else if (newMovement == "AirMovement") {
+        con->setState(new AirMovement()); // guard: allowed exception — call in a helicopter
+    } else if (newMovement == "FootMovement") {
         con->setState(new FootMovement());
-    } else if (newMovement == ("CarMovement")) {
-        con->setState(new CarMovement());
-    } else if (newMovement == ("TrainMovement")) {
-        con->setState(new TrainMovement());
-    } 
+    } else if (newMovement == "CarMovement") {
+        std::cout << "Cannot walk directly into a Car. Try Bicycle first.\n";
+    } else if (newMovement == "TrainMovement") {
+        std::cout << "Cannot walk directly onto a Train. Try Bicycle or Car first.\n";
+    }
 }
 
 string FootMovement::getType()

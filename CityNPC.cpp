@@ -11,5 +11,5 @@ CityNPC::~CityNPC()
 
 void CityNPC::observe()
 {
-    std::cout << "Want some crack?!\n";
+    std::cout << "\n== Want some crack?!\n\n";
 }

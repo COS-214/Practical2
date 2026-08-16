@@ -10,18 +10,18 @@ AirMovement::AirMovement()
 
 AirMovement::~AirMovement() {}
 
-void AirMovement::move(Traveller* con, std::string newMovement) {
-    if (newMovement == ("AirMovement")) {
-        con->setState(new AirMovement());
-    } else if (newMovement == ("BicycleMovement")) {
-        con->setState(new BicycleMovement());
-    } else if (newMovement == ("FootMovement")) {
-        con->setState(new FootMovement());
-    } else if (newMovement == ("CarMovement")) {
-        con->setState(new CarMovement());
-    } else if (newMovement == ("TrainMovement")) {
+void AirMovement::move(Traveller* con, string newMovement) {
+    if (con == nullptr) return;
+
+    if (newMovement == "TrainMovement") {
         con->setState(new TrainMovement());
-    } 
+    } else if (newMovement == "AirMovement") {
+        con->setState(new AirMovement());
+    } else if (newMovement == "FootMovement") {
+        std::cout << "Cannot land directly into Foot movement from the air. Try landing via Train first.\n";
+    } else {
+        std::cout << "Cannot transition from Air movement directly to " << newMovement << ".\n";
+    }
 }
 
 string AirMovement::getType()

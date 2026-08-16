@@ -11,5 +11,5 @@ CityObstacle::~CityObstacle()
 
 void CityObstacle::observe()
 {
-    std::cout << "Gets Robbed.\n";
+    std::cout << "\n== Gets Robbed.\n\n";
 }

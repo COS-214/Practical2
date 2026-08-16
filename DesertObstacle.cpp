@@ -11,5 +11,5 @@ DesertObstacle::~DesertObstacle()
 
 void DesertObstacle::observe()
 {
-    std::cout << "Gets Robbed.\n";
+    std::cout << "\n## Are we in the middle?!!.\n\n";
 }

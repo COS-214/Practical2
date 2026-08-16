@@ -11,5 +11,5 @@ ForestStructure::~ForestStructure()
 
 void ForestStructure::observe()
 {
-    std::cout << "Why are they all made up of wood??\n";
+    std::cout << "\n-- Why are they all made up of wood??\n\n";
 }

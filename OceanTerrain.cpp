@@ -11,5 +11,5 @@ OceanTerrain::~OceanTerrain()
 
 void OceanTerrain::observe()
 {
-    std::cout << "Why are we drowning?\n";
+    std::cout << "\n++ Why are we drowning?\n\n";
 }

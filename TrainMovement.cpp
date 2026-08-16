@@ -10,17 +10,19 @@ TrainMovement::TrainMovement()
 TrainMovement::~TrainMovement() {}
 
 void TrainMovement::move(Traveller* con, string newMovement) {
-    if (newMovement == ("AirMovement")) {
-        con->setState(new AirMovement());
-    } else if (newMovement == ("BicycleMovement")) {
-        con->setState(new BicycleMovement());
-    } else if (newMovement == ("FootMovement")) {
-        con->setState(new FootMovement());
-    } else if (newMovement == ("CarMovement")) {
+    if (con == nullptr) return;
+
+    if (newMovement == "CarMovement") {
         con->setState(new CarMovement());
-    } else if (newMovement == ("TrainMovement")) {
+    } else if (newMovement == "AirMovement") {
+        con->setState(new AirMovement());
+    } else if (newMovement == "TrainMovement") {
         con->setState(new TrainMovement());
-    } 
+    } else if (newMovement == "FootMovement") {
+        std::cout << "Cannot disembark directly onto Foot from a moving Train. Try Car first.\n";
+    } else if (newMovement == "BicycleMovement") {
+        std::cout << "Cannot disembark directly onto Bicycle from a moving Train. Try Car first.\n";
+    }
 }
 
 string TrainMovement::getType()

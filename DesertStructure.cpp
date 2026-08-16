@@ -11,5 +11,5 @@ DesertStructure::~DesertStructure()
 
 void DesertStructure::observe()
 {
-    std::cout << "Why do they have so much dust?\n";
+    std::cout << "\n## Why do they have so much dust?\n\n";
 }

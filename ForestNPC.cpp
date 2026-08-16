@@ -11,6 +11,6 @@ ForestNPC::~ForestNPC()
 
 void ForestNPC::observe()
 {
-    std::cout << "Ooh-ooh-aah-aah!!\n";
-    std::cout << "Thank you!\n";
+    std::cout << "\n-- Monkey: Ooh-ooh-aah-aah!!\n";
+    std::cout << "-- You:    Thank you!\n\n";
 }

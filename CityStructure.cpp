@@ -11,5 +11,5 @@ CityStructure::~CityStructure()
 
 void CityStructure::observe()
 {
-    std::cout << "This is some amaizing architecture\n";
+    std::cout << "\n== This is some amaizing architecture\n\n";
 }

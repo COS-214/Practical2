@@ -11,5 +11,5 @@ CityTerrain::~CityTerrain()
 
 void CityTerrain::observe()
 {
-    std::cout << "Why are there so many people here??\n";
+    std::cout << "\n== Why are there so many people here??\n\n";
 }

@@ -11,5 +11,5 @@ DesertTerrain::~DesertTerrain()
 
 void DesertTerrain::observe()
 {
-    std::cout << "Why is it so dusty?\n";
+    std::cout << "\n## Why is it so dusty?\n\n";
 }
